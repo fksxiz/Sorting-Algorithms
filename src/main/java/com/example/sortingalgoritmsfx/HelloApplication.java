@@ -19,6 +19,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("Sorting Algorithms");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

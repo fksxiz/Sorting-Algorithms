@@ -94,13 +94,13 @@ public class HelloController {
         int buf;
         try {
             for (int i = 0; i < size - 1; i++) {
-                currentIndex = i;
-                for (int j = i + 1; j < size; j++) {
-                    secondaryIndex = j;
-                    if (array[i] >= array[j]) {
-                        buf = array[i];
-                        array[i] = array[j];
-                        array[j] = buf;
+                for (int j = 0; j < size-i-1; j++) {
+                    secondaryIndex = j+1;
+                    currentIndex = j;
+                    if (array[j] > array[j+1]) {
+                        buf = array[j];
+                        array[j] = array[j+1];
+                        array[j+1] = buf;
                     }
                     drawArray();
                     Thread.sleep(time);

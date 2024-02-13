@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="419.0" prefWidth="696.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.sortingalgoritmsfx.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <Canvas fx:id="canvas" height="400" width="600" />
+   <Label fx:id="output" text="-" />
+   <ButtonBar fx:id="bar" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="696.0">
+      <buttons>
+          <Button fx:id="BSButton" contentDisplay="CENTER" onAction="#onBubbleSortButtonClick" prefHeight="25.0" prefWidth="161.0" text="Сортировка пузырьком" textAlignment="CENTER" />
+         <Button contentDisplay="CENTER" mnemonicParsing="false" text="Сортировка вставками" textAlignment="CENTER" />
+         <Button contentDisplay="CENTER" mnemonicParsing="false" text="Сортировка поразрядная" textAlignment="CENTER" />
+         <Button contentDisplay="CENTER" mnemonicParsing="false" text="Быстрая сортировка" textAlignment="CENTER" />
+      </buttons>
+   </ButtonBar>
+   <ButtonBar layoutX="30.0" layoutY="316.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="696.0">
+      <buttons>
+         <TextField fx:id="textField" disable="true" />
+         <Button contentDisplay="CENTER" disable="true" prefHeight="25.0" prefWidth="161.0" text="Добавить элемент" textAlignment="CENTER" />
+         <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#onGenerateButtonClick" text="Сгенерировать массив" textAlignment="CENTER" />
+         <Button contentDisplay="CENTER" disable="true" mnemonicParsing="false" text="Очистить массив" textAlignment="CENTER" />
+      </buttons>
+   </ButtonBar>
+</VBox>

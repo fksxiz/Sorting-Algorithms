@@ -87,6 +87,15 @@ public class HelloController {
         drawArray();
     }
 
+    @FXML
+    protected void onSelectionSortButtonClick(){
+        try{
+            time=Integer.parseInt(textField.getText());
+        }catch (Exception e){}
+        SelectionSort();
+        drawArray();
+    }
+
     private void BubbleSort(){
         bar.setDisable(true);
         bar2.setDisable(true);
@@ -111,6 +120,34 @@ public class HelloController {
         }catch (Exception e){
             e.printStackTrace();
         }
+        });
+        sortingThread.start();
+    }
+
+    private void SelectionSort(){
+        bar.setDisable(true);
+        bar2.setDisable(true);
+        Thread sortingThread = new Thread(() -> {
+            int buf;
+            try {
+                for (int i = 0; i < size - 1; i++) {
+                    currentIndex = i;
+                    for (int j = i + 1; j < size; j++) {
+                        secondaryIndex = j;
+                        if (array[i] >= array[j]) {
+                            buf = array[i];
+                            array[i] = array[j];
+                            array[j] = buf;
+                        }
+                        drawArray();
+                        Thread.sleep(time);
+                    }
+                }
+                bar.setDisable(false);
+                bar2.setDisable(false);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         });
         sortingThread.start();
     }

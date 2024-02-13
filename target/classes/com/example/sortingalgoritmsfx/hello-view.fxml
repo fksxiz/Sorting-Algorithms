@@ -14,7 +14,7 @@
    <ButtonBar fx:id="bar" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="696.0">
       <buttons>
           <Button fx:id="BSButton" contentDisplay="CENTER" onAction="#onBubbleSortButtonClick" prefHeight="25.0" prefWidth="161.0" text="Сортировка пузырьком" textAlignment="CENTER" />
-         <Button contentDisplay="CENTER" mnemonicParsing="false" text="Сортировка вставками" textAlignment="CENTER" />
+         <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#onSelectionSortButtonClick" text="Сортировка выбором" textAlignment="CENTER" />
          <Button contentDisplay="CENTER" mnemonicParsing="false" text="Сортировка поразрядная" textAlignment="CENTER" />
          <Button contentDisplay="CENTER" mnemonicParsing="false" text="Быстрая сортировка" textAlignment="CENTER" />
       </buttons>

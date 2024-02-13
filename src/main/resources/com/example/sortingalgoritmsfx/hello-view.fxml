@@ -22,7 +22,7 @@
    <ButtonBar fx:id="bar2" layoutX="30.0" layoutY="316.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="696.0">
       <buttons>
          <TextField fx:id="textField" text="200" />
-         <Label text="Время между иттерациями" />
+         <Label text="Время между итерациями" />
          <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#onGenerateButtonClick" text="Сгенерировать массив" textAlignment="CENTER" />
          <Button contentDisplay="CENTER" disable="true" mnemonicParsing="false" text="Очистить массив" textAlignment="CENTER" />
       </buttons>

@@ -7,6 +7,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
+import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.util.Duration;
 
@@ -23,12 +24,18 @@ public class HelloController {
 
     private int currentStep = 0;
 
+    private int time=200;
+
     @FXML
     private Canvas canvas;
     @FXML
     private Button BSButton;
     @FXML
     private ButtonBar bar;
+    @FXML
+    private ButtonBar bar2;
+    @FXML
+    private TextField textField;
 
     @FXML
     public void initialize() {
@@ -66,17 +73,23 @@ public class HelloController {
     @FXML
     protected void onGenerateButtonClick() {
         generateRandomArray();
+        currentIndex=-1;
+        secondaryIndex=-1;
         drawArray();
     }
 
     @FXML
     protected void onBubbleSortButtonClick(){
+        try{
+            time=Integer.parseInt(textField.getText());
+        }catch (Exception e){}
         BubbleSort();
         drawArray();
     }
 
     private void BubbleSort(){
         bar.setDisable(true);
+        bar2.setDisable(true);
         Thread sortingThread = new Thread(() -> {
         int buf;
         try {
@@ -90,14 +103,15 @@ public class HelloController {
                         array[j] = buf;
                     }
                     drawArray();
-                    Thread.sleep(200);
+                    Thread.sleep(time);
                 }
             }
+            bar.setDisable(false);
+            bar2.setDisable(false);
         }catch (Exception e){
             e.printStackTrace();
         }
         });
         sortingThread.start();
-        bar.setDisable(false);
     }
 }

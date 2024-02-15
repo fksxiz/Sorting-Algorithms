@@ -101,7 +101,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>com.example.sortingalgoritmsfx/com.example.sortingalgoritmsfx.HelloApplication
+                            <mainClass>com.example.sortingalgoritmsfx/com.example.sortingalgoritmsfx.SortingAlgorithmsApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

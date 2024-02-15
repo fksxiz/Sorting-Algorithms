@@ -1,7 +1,5 @@
 package com.example.sortingalgoritmsfx;
 
-import javafx.animation.KeyFrame;
-import javafx.animation.Timeline;
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -9,12 +7,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonBar;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
-import javafx.util.Duration;
-
-import java.util.Arrays;
 
 
-public class HelloController {
+public class SortingController {
     private static final int size=14;
     private static final int canvasHeight=400;
     private static final int canvasWidth=600;
@@ -221,6 +216,7 @@ public class HelloController {
 
         swap(arr,i+1,high);
         return i+1;
+
     }
 
     private void generateRandomArray() {
